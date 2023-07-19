@@ -19,6 +19,13 @@ export class AppComponent {
     toolbar.addHandler('image', this.imageHandler.bind(this));
   }
 
+  exportContentToHTML() {
+    const editorContentAsHTML = this.editor.quillEditor.root.innerHTML;
+    console.log(editorContentAsHTML);
+    // Now you can do whatever you want with editorContentAsHTML
+  }
+
+
   imageHandler() {
     const URL = prompt('Enter the image URL');
     const range = this.editor.quillEditor.getSelection(true);
